@@ -42,7 +42,7 @@ const StatsAndInfo = () => (
             <h2 className="text-xl font-bold mb-2 text-blue-900">About the Test</h2>
             <p className="text-base mb-2 text-blue-900">
                 This simple tool measures your reaction time.
-                The blink of an eye is around <strong>100 ms</strong>, and typical human reaction time is around <strong>200 ms</strong> with the average (median) reaction time of about <strong>270 ms</strong>.
+                The blink of an eye is around <strong>100 ms</strong>, and peak human reaction time is around <strong>200 ms</strong> with the average (median) reaction time of about <strong>270 ms</strong>.
                 <br /><br />
                 However, this is too slow compared to the <strong>ultra-low latency infrastructure</strong> available at <strong>Deutsche Bank</strong>.
             </p>
