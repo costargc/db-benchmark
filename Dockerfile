@@ -1,29 +1,15 @@
-# Stage 1: Build the React app
-FROM node:20-alpine as build
-
-# Set working directory
+# Build stage
+FROM node:20-alpine AS build
 WORKDIR /app
-
-# Copy package files
 COPY package.json package-lock.json ./
-
-# Install dependencies
 RUN npm install
-
-# Copy source files
 COPY . .
-
-# Build the React app for production
 RUN npm run build
 
-# Stage 2: Serve app with Nginx
-FROM nginx:alpine
-
-# Copy built files to Nginx
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Expose port 8080 (Google Cloud Run default)
+# Serve stage
+FROM node:20-alpine
+WORKDIR /app
+RUN npm install -g serve
+COPY --from=build /app/build ./build
 EXPOSE 8080
-
-# Start Nginx server
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["serve", "-s", "build", "-l", "8080"]
