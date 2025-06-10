@@ -6,7 +6,7 @@ import Statistics from '../components/Statistics';
 const Home = () => (
     <div>
         <Navbar />
-        <div className="flex flex-col items-center justify-center p-4 gap-4">
+        <div className="flex flex-col items-center justify-center p-4">
             <ReactionTest />
             <div className="flex gap-4 mt-4">
                 <Statistics />

@@ -20,15 +20,14 @@ const data = [
 ];
 
 const StatsAndInfo = () => (
-    <div className="flex gap-10 justify-center mt-4">
+    <div className="flex flex-col md:flex-row gap-6 items-center md:items-start justify-center mt-4 px-4">
 
         {/* Statistics Card with plot */}
-        <div className="bg-white rounded-lg shadow p-6 hover:shadow-xl transition-shadow max-w-lg">
-
+        <div className="bg-white rounded-lg shadow p-6 hover:shadow-xl transition-shadow w-full max-w-lg">
             <h2 className="text-xl font-bold text-blue-900 mt-3">Statistics</h2>
             <div className="mt-4">
-                <LineChart width={400} height={150} data={data}>
-                    <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
+                <LineChart width={300} height={150} data={data}>
+                    <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
@@ -39,10 +38,9 @@ const StatsAndInfo = () => (
         </div>
 
         {/* About Test Card */}
-        <div className="bg-white rounded-lg shadow p-6 hover:shadow-xl transition-shadow max-w-lg ">
-
+        <div className="bg-white rounded-lg shadow p-6 hover:shadow-xl transition-shadow w-full max-w-lg">
             <h2 className="text-xl font-bold mb-2 text-blue-900">About the Test</h2>
-            <p className="text-m mb-2 text-blue-900 ">
+            <p className="text-base mb-2 text-blue-900">
                 This simple tool measures your reaction time.
                 The blink of an eye is around <strong>100 ms</strong>, and typical human reaction time is around <strong>200 ms</strong> with the average (median) reaction time of about <strong>270 ms</strong>.
                 <br /><br />
